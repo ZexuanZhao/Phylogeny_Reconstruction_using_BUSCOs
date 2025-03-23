@@ -6,9 +6,9 @@
 
 ## Files to prepare:
  - A sample sheet - sample_sheet.csv: a comma delimited file with 2 columns (no column name):
-   - `sample`, `path to the genome assembly`
+   - `sample` as the tip labels in the final species tree, `path to the genome assembly`
  - Modify configuration file - `configuration/config.yaml`:
-   - `project`: a name for your project
+   - `project`: a name for your project as the prefix of the final gene tree file.
    - `sample_sheet`: path to the sample sheet prepared above
    - `outdir`: path to the output directory
    - `busco_lineage`: lineage to annotate BUSCOs, check [here](https://busco-data.ezlab.org/v5/data/lineages/).
