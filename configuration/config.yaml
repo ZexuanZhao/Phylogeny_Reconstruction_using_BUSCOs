@@ -1,0 +1,15 @@
+## A project name for naming summary files
+project: "test"
+
+## Input files
+sample_sheet: "test_data/test_sample_sheet.csv"
+outdir: "test_bacteria_phylogeny"
+
+## Busco lineage: use full lineage name: xxx_odb12
+busco_lineage: "fungi_odb12"
+
+## Resources and parallel configs
+n_parallele_mafft: 10
+n_parallele_iqtree: 40
+cpus: 40
+astral: "astral4"
