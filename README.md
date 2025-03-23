@@ -16,7 +16,7 @@
    - `n_parallele_mafft`: number of jobs to run mafft in parallel
    - `n_parallele_iqtree`: number of jobs to run iqtree in parallel
    - `cpus`: number of CPUs to use
-   - `astral`: name of the astral excutable in the `\bin` folder, like "astral4"
+   - `astral`: name of the astral excutable in the `\bin` folder
 
 ## Environment:
  - Make sure snakemake is installed in current environment.
