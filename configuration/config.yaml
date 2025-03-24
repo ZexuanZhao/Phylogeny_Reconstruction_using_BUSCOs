@@ -6,7 +6,7 @@ sample_sheet: "test_data/test_sample_sheet.csv"
 outdir: "test_out"
 
 ## Busco lineage: use full lineage name: xxx_odb12
-busco_lineage: "hymenoptera_odb12"
+busco_lineage: "fungi_odb12"
 
 ## Settings
 # minimum number of samples in a gene tree required to build a tree
