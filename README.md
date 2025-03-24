@@ -13,9 +13,12 @@
    - `outdir`: path to the output directory
    - `busco_lineage`: lineage to annotate BUSCOs, check [here](https://busco-data.ezlab.org/v5/data/lineages/).
      - Note: use full lineage name, like xxx_odb12
+   - `minimum_sample_n`: build gene trees with minimum number of samples since `astral` allows missing taxa in the gene trees.
+     - Note: should not be lower than 4
+   - `cpus`: number of CPUs to use
+   - `cpus_per_compleasm`: number of CPUs to run `compleasm` for each genome assembly.
    - `n_parallele_mafft`: number of jobs to run mafft in parallel
    - `n_parallele_iqtree`: number of jobs to run iqtree in parallel
-   - `cpus`: number of CPUs to use
    - `astral`: name of the astral excutable in the `\bin` folder
 
 ## Environment:
