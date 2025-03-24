@@ -2,7 +2,7 @@ rule mafft:
     conda:
         os.path.join(workflow.basedir,"envs/mafft.yaml")
     input:
-        os.path.join(config["outdir"],"merged_best_single_copy_BUSCOs","done.txt")
+        os.path.join(config["outdir"],"merged_best_single_copy_BUSCOs","summary.txt")
     output:
         os.path.join(config["outdir"],"aligned_merged_best_single_copy_BUSCOs","done.txt")
     params:
@@ -39,7 +39,8 @@ rule iqtree:
     params:
         indir = os.path.join(config["outdir"],"aligned_merged_best_single_copy_BUSCOs"),
         outdir = os.path.join(config["outdir"],"gene_trees"),
-        n_parallele_iqtree = config["n_parallele_iqtree"]
+        n_parallele_iqtree = config["n_parallele_iqtree"],
+        cpu_per_job= int(int(config["cpus"]) / int(config["n_parallele_iqtree"]))
     log:
         os.path.join(config["outdir"],"logs","iqtree.log")
     threads:
@@ -51,6 +52,8 @@ rule iqtree:
                     -I {{}} \
                     bash -c \
                         'iqtree \
+                            -redo \
+                            -T {params.cpu_per_job} \
                             -s "{{}}" \
                             -m MFP' \
                             > {log} 2>{log}

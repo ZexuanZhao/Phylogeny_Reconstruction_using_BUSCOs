@@ -35,7 +35,7 @@ rule compleasm:
     log:
         os.path.join(config["outdir"],"logs", "compleasm", "{sample}.log")
     threads:
-        10
+        config["cpus_per_compleasm"]
     shell:
         """
         compleasm \
