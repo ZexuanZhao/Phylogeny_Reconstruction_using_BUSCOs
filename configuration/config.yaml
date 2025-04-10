@@ -20,3 +20,6 @@ cpus_per_compleasm: 10
 n_parallele_mafft: 40
 n_parallele_iqtree: 40
 astral: "astral4"
+
+## Sequences filtering parameters
+p_Ns: "0.5"

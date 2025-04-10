@@ -14,5 +14,6 @@ rule astral:
             bin/{params.astral} \
                 -t {threads} \
                 -o {output} \
-                {input}
+                {input} \
+                >{log} 2>{log}
         """

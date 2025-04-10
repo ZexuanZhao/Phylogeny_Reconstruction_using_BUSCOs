@@ -31,11 +31,11 @@ rule merge_protein_files:
     input:
         expand(os.path.join(config["outdir"],"compleasm","{sample}", config["busco_lineage"], "best_single_copy_BUSCOs", "done.txt"), sample = sample_sheet.index)
     output:
-        os.path.join(config["outdir"], "merged_best_single_copy_BUSCOs", "summary.txt")
+        os.path.join(config["outdir"], "best_single_copy_BUSCOs_merged", "summary.txt")
     params:
         script = "scripts/merge_faa_files.py",
         indirs = expand(os.path.join(config["outdir"],"compleasm","{sample}", config["busco_lineage"], "best_single_copy_BUSCOs"), sample = sample_sheet.index),
-        outdir = os.path.join(config["outdir"], "merged_best_single_copy_BUSCOs"),
+        outdir = os.path.join(config["outdir"], "best_single_copy_BUSCOs_merged"),
         n = config["minimum_sample_n"]
     log:
         os.path.join(config["outdir"],"logs", "merge_faa_files.log")

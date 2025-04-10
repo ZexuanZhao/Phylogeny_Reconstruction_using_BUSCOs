@@ -18,7 +18,6 @@ include: "rules/4.reconstruct_species_tree.smk"
 
 rule all:
     input:
-        os.path.join(config["outdir"],"merged_best_single_copy_BUSCOs","summary.txt"),
         os.path.join(config["outdir"],"species_tree", config["project"] + ".speciesTree.txt")
     shell:
         """
